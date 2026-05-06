@@ -13,6 +13,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.send('Hospital Billing API Running');
+});
 
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
